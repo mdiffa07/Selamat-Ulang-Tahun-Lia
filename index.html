@@ -29,12 +29,12 @@
   overflow: hidden;
   border-right: 3px solid #b85c38;
   width: 0;
-  animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+  animation: typing 3s steps(20, end) forwards, blink 0.75s step-end infinite;
 }
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 100% }
+  to { width: 16ch }
 }
 
 @keyframes blink {
@@ -92,7 +92,7 @@ audio {
 </div>
 
   </div>  <!-- Musik dari SndUp -->  <audio id="bgm" autoplay loop playsinline>
-    <source src="https://sndup.net/w43wr/d" type="audio/mp3">
+    <source src="https://sndup.net/w43wr/d.mp3" type="audio/mp3">
   </audio>  <script>
     const intro = document.getElementById('intro');
     const message = document.getElementById('message');
@@ -104,6 +104,6 @@ audio {
       audio.play().catch(e => {
         console.log('Autoplay gagal:', e);
       });
-    }, 5000);
+    }, 4000);
   </script></body>
 </html>
