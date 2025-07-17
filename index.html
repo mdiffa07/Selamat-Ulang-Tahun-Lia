@@ -123,14 +123,17 @@ audio {
   </audio>  <script>
     const audio = document.getElementById("bgMusic");
     const btn = document.getElementById("btn_music");
+    let isPlaying = false;
 
     function toggleMusic() {
-      if (audio.paused) {
+      if (!isPlaying) {
         audio.play().then(() => {
+          isPlaying = true;
           btn.innerText = "⏸️ Udah diem Lia jangan pencet lagi aku pusing";
         }).catch(e => console.log("Autoplay gagal:", e));
       } else {
         audio.pause();
+        isPlaying = false;
         btn.innerText = "▶️ Putar Lagu Romantis dari Diffa";
       }
     }
