@@ -1,125 +1,164 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday Lia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <title>Afrylia Birthday 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        * {
+        body {
             margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Nunito', sans-serif;
-        }body {
-        height: 100vh;
-        overflow: hidden;
-        background-color: #a7c7eb;
-        color: white;
-        position: relative;
-    }
-
-    .intro-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(167, 199, 235, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 100;
-        backdrop-filter: blur(5px);
-    }
-
-    .birthday-text {
-        font-size: 3.5rem;
-        font-weight: 700;
-        text-align: center;
-        color: #2c3e50;
-        font-family: 'Brush Script MT', cursive;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        animation: glow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes glow {
-        from {
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #a7c7eb, 0 0 20px #a7c7eb;
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://i.pinimg.com/originals/7b/4e/bb/7b4ebb5d7e898b628525b8123b3a00fd.jpg');
+            background-size: cover;
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
         }
-        to {
-            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #2c3e50, 0 0 40px #2c3e50;
+
+        .container {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
         }
-    }
 
-    .main-content {
-        background-image: url('https://i.pinimg.com/originals/7b/4e/bb/7b4ebb5d7e898b628525b8123b3a00fd.jpg');
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2rem;
-        opacity: 1;
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .birthday-card {
-        background-color: rgba(167, 199, 235, 0.85);
-        border-radius: 15px;
-        padding: 2rem;
-        max-width: 600px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        border: 2px solid #f8d7da;
-        text-align: center;
-        transform: scale(0.95);
-        transition: transform 0.3s ease;
-    }
+        .blur-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            z-index: 1;
+            opacity: 0;
+            animation: blurIn 2s forwards;
+        }
 
-    .birthday-card:hover {
-        transform: scale(1);
-    }
+        @keyframes blurIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-    h1 {
-        color: #f8d7da;
-        margin-bottom: 1.5rem;
-        font-size: 2.5rem;
-        letter-spacing: 1px;
-    }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            z-index: 2;
+        }
 
-    p {
-        margin-bottom: 1rem;
-        line-height: 1.6;
-        font-size: 1.1rem;
-    }
+        .message {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
 
-    .footer {
-        font-style: italic;
-        margin-top: 2rem;
-        color: #f8d7da;
-        font-size: 1.3rem;
-    }
-</style>
+        .signature {
+            font-style: italic;
+            margin-top: 30px;
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
 
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(10, 30, 58, 0.7);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid #f8d7da;
+            z-index: 10;
+        }
+
+        .music-control i {
+            color: #f8d7da;
+            font-size: 1.5rem;
+        }
+    </style>
 </head>
 <body>
-    <audio autoplay loop>
-        <source src="https://dl.sndup.net/zw2sv/RinduSendiri.mp3" type="audio/mpeg">
-        Browser kamu tidak mendukung audio otomatis.
-    </audio><div class="intro-overlay">
-    <h1 class="birthday-text">Lia</h1>
-</div>
-
-<div class="main-content">
-    <div class="birthday-card">
-        <h1>Selamat Ulang Tahun, Lia</h1>
-        <p>Katanya umur cuma angka. Tapi kamu beda. Kamu angka yang bikin jantung deg‑degan, kayak tebakan jawaban Milea yang cuma Dilan ngerti.</p>
-        <p>Hari ini bumi sedikit lebih harum, sedikit lebih hangat. Karena di tanggal ini, seseorang bernama Lia hadir dan bikin hari makin berarti.</p>
-        <p>Maaf aku nggak punya cokelat atau bunga. Tapi aku punya halaman ini, ditulis dengan tinta rasa sayang dan rindu yang enggak pernah basi.</p>
-        <p>Semoga ulang tahun ini penuh tawa dan kehangatan. Semoga setiap detik kamu tahu: kamu penting. Bahkan ketika dunia lupa bilang.</p>
-        <div class="footer">— Dari seseorang yang senyum tiap denger nama kamu.</div>
+    <div class="container">
+        <div class="blur-background"></div>
+        <h1 id="birthdayText">Afrylia Birthday 2025</h1>
+        <div class="message" id="message">
+            <p>"Kamu tahu, setiap detik bersamamu adalah keabadian yang ingin aku ukir."</p>
+            <p>"Seperti Dilan yang selalu ada untuk Milea, aku akan selalu ada untukmu."</p>
+            <p>"Kamu adalah alasan aku tersenyum, seperti matahari yang selalu bersinar di hariku."</p>
+            <p class="signature" id="signature">- DIFFA 2025</p>
+        </div>
     </div>
-</div>
 
+    <div class="music-control" id="musicControl">
+        <i>♪</i>
+    </div>
+
+    <audio id="birthdaySong" src="https://drive.google.com/uc?export=download&id=1A4yQwjETeZp9u4KcSUwAivmyL9zWASFJ" loop autoplay></audio>
+
+    <script>
+        const musicControl = document.getElementById('musicControl');
+        const birthdaySong = document.getElementById('birthdaySong');
+        const birthdayText = document.getElementById('birthdayText');
+        const message = document.getElementById('message');
+        const signature = document.getElementById('signature');
+
+        let isPlaying = true;
+
+        // Play music automatically
+        birthdaySong.play();
+
+        // Animation for birthday text
+        setTimeout(() => {
+            birthdayText.style.opacity = 0; // Hide birthday text
+            message.style.opacity = 1; // Show message
+            signature.style.opacity = 1; // Show signature
+        }, 3000); // 3 seconds delay before showing the message
+
+        musicControl.addEventListener('click', () => {
+            if (isPlaying) {
+                birthdaySong.pause();
+                musicControl.innerHTML = '<i>♫</i>';
+            } else {
+                birthdaySong.play();
+                musicControl.innerHTML = '<i>♪</i>';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
 </body>
 </html>
