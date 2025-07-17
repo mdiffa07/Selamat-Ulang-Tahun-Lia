@@ -112,7 +112,7 @@
         Dari seseorang yang ngetik ini sambil senyum, dan sedikit deg-degan kayak Dilan waktu ngajak Milea boncengan: DIFFA 2025.
       </div>
       <div class="btn-container">
-        <button id="btn_music" onclick="toggleMusic()">Play</button>
+        <button id="btn_music" onclick="toggleMusic()">Play / Pause</button>
       </div>
     </div>
   </div>
@@ -122,12 +122,17 @@
   <script>
     const audio = document.getElementById("bgMusic");
     const btn = document.getElementById("btn_music");
+    let isPlaying = true;
 
     function toggleMusic() {
       if (audio.paused) {
         audio.play();
+        isPlaying = true;
+        btn.innerText = "⏸️ Pause";
       } else {
         audio.pause();
+        isPlaying = false;
+        btn.innerText = "▶️ Play";
       }
     }
 
