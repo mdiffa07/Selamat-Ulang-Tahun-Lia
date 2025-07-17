@@ -68,6 +68,22 @@ audio {
   display: none;
 }
 
+.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#btn_music {
+  background-color: #b85c38;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+}
+
   </style>
 </head>
 <body>
@@ -89,21 +105,34 @@ audio {
     Selamat ulang tahun, Lia.<br>
     Dari seseorang yang ngetik ini sambil senyum, dan sedikit deg-degan kayak Dilan waktu ngajak Milea boncengan: DIFFA 2025.
   </div>
+  <div class="btn-container">
+    <button id="btn_music" onclick="toggleMusic()">Play/Pause</button>
+  </div>
 </div>
 
-  </div>  <!-- Musik dari Vocaroo -->  <audio id="bgm" autoplay loop playsinline>
-    <source src="https://voca.ro/1V5XwumqHYSl.mp3" type="audio/mp3">
-  </audio>  <script>
+  </div><audio id="bgMusic" src="https://voca.ro/1V5XwumqHYSl" loop></audio>
+
+  <script>
+    let audioPlaying = false;
+
+    function toggleMusic() {
+      const audio = document.getElementById("bgMusic");
+
+      if (!audioPlaying) {
+        audio.play();
+        audioPlaying = true;
+      } else {
+        audio.pause();
+        audioPlaying = false;
+      }
+    }
+
     const intro = document.getElementById('intro');
     const message = document.getElementById('message');
-    const audio = document.getElementById('bgm');
 
     setTimeout(() => {
       intro.classList.add('hidden');
       message.classList.remove('hidden');
-      audio.play().catch(e => {
-        console.log('Autoplay gagal:', e);
-      });
     }, 4000);
   </script></body>
 </html>
