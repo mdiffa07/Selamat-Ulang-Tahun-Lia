@@ -116,22 +116,21 @@ audio {
   </div>
 </div>
 
-  </div><audio id="bgMusic" src="https://raw.githubusercontent.com/mdiffa07/Lagu-Lia-dari-Dilan/main/Vocaroo-1V5XwumqHYSl.mp3" loop></audio>
+  </div><audio id="bgMusic" src="https://raw.githubusercontent.com/mdiffa07/Lagu-Lia-dari-Dilan/main/Vocaroo-1V5XwumqHYSl.mp3" autoplay loop></audio>
 
   <script>
-    let audioPlaying = false;
+    let audio = document.getElementById("bgMusic");
+    let btn = document.getElementById("btn_music");
+    let isPlaying = false;
 
     function toggleMusic() {
-      const audio = document.getElementById("bgMusic");
-      const btn = document.getElementById("btn_music");
-
-      if (!audioPlaying) {
+      if (audio.paused) {
         audio.play();
-        audioPlaying = true;
-        btn.innerText = "⏸️ Berhentiin Dulu, Lia Pusing";
+        isPlaying = true;
+        btn.innerText = "⏸️ Udah diem Lia jangan pencet lagi aku pusing";
       } else {
         audio.pause();
-        audioPlaying = false;
+        isPlaying = false;
         btn.innerText = "▶️ Putar Lagu Romantis dari Diffa";
       }
     }
