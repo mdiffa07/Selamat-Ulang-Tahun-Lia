@@ -87,16 +87,14 @@
 }
 
 audio {
-  display: block;
-  position: absolute;
-  top: -9999px;
+  display: none;
 }
 
   </style>
 </head>
 <body>
   <div class="top-bar">
-    <button id="btn_music" onclick="toggleMusic()">▶️ Putar Lagu Romantis dari Diffa</button>
+    <button id="btn_music">▶️ Putar Lagu Romantis dari Diffa</button>
   </div>  <div class="fullscreen" id="intro">
     <div class="typing-text" id="typing">Afrylia Birthday</div>
   </div>  <div class="hidden" id="message">
@@ -123,20 +121,20 @@ audio {
   </audio>  <script>
     const audio = document.getElementById("bgMusic");
     const btn = document.getElementById("btn_music");
-    let isPlaying = false;
 
-    function toggleMusic() {
-      if (!isPlaying) {
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
         audio.play().then(() => {
-          isPlaying = true;
           btn.innerText = "⏸️ Udah diem Lia jangan pencet lagi aku pusing";
-        }).catch(e => console.log("Autoplay gagal:", e));
+        }).catch((e) => {
+          console.log("Autoplay gagal:", e);
+          alert("Maaf Lia, browser kamu belum bisa play otomatis. Coba klik tombolnya dua kali ya~");
+        });
       } else {
         audio.pause();
-        isPlaying = false;
         btn.innerText = "▶️ Putar Lagu Romantis dari Diffa";
       }
-    }
+    });
 
     const intro = document.getElementById('intro');
     const message = document.getElementById('message');
