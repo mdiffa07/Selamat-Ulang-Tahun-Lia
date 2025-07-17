@@ -1,164 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afrylia Birthday 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-image: url('https://i.pinimg.com/originals/7b/4e/bb/7b4ebb5d7e898b628525b8123b3a00fd.jpg');
-            background-size: cover;
-            color: #fff;
-            text-align: center;
-            overflow: hidden;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afrylia Birthday 2025</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); /* Aesthetic */
+    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap'); /* Dilan-style */body {
+  margin: 0;
+  background: #fff6f0;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+}
 
-        .container {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-            padding: 20px;
-            opacity: 0;
-            animation: fadeIn 2s forwards;
-        }
+.fullscreen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.typing-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  color: #b85c38;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #b85c38;
+  width: 0;
+  animation: typing 4s steps(30, end) forwards, blink 0.75s step-end infinite;
+}
 
-        .blur-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-            z-index: 1;
-            opacity: 0;
-            animation: blurIn 2s forwards;
-        }
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
 
-        @keyframes blurIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+@keyframes blink {
+  50% { border-color: transparent }
+}
 
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            z-index: 2;
-        }
+.hidden { display: none; }
 
-        .message {
-            font-size: 1.5rem;
-            margin: 10px 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
+.message {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5em;
+  color: #333;
+  animation: fadeIn 2s ease-in;
+  max-width: 800px;
+  margin: auto;
+}
 
-        .signature {
-            font-style: italic;
-            margin-top: 30px;
-            font-size: 1.5rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-        .music-control {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(10, 30, 58, 0.7);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            border: 1px solid #f8d7da;
-            z-index: 10;
-        }
+audio {
+  display: none;
+}
 
-        .music-control i {
-            color: #f8d7da;
-            font-size: 1.5rem;
-        }
-    </style>
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="blur-background"></div>
-        <h1 id="birthdayText">Afrylia Birthday 2025</h1>
-        <div class="message" id="message">
-            <p>"Kamu tahu, setiap detik bersamamu adalah keabadian yang ingin aku ukir."</p>
-            <p>"Seperti Dilan yang selalu ada untuk Milea, aku akan selalu ada untukmu."</p>
-            <p>"Kamu adalah alasan aku tersenyum, seperti matahari yang selalu bersinar di hariku."</p>
-            <p class="signature" id="signature">- DIFFA 2025</p>
-        </div>
+  <div class="fullscreen" id="intro">
+    <div class="typing-text" id="typing">Afrylia Birthday 2025</div>
+  </div>  <div class="fullscreen hidden" id="message">
+    <div class="message">
+      Maaf ya Lia, harusnya aku ngucapin ini pas tanggal 13. Tapi waktu itu aku nggak tau gimana caranya ngucapin sesuatu yang sederhana, tapi bisa bikin kamu senyum lama. Jadi aku nunggu... sampai akhirnya nemu cara yang paling aku suka: begini caranya.<br><br>
+      Lia, selamat ulang tahun yang ke-18.<br><br>
+      Dari semua tanggal di kalender, hari ini tetap jadi yang paling manis, meskipun aku telat bilang. Soalnya kamu lahir. Dan kalau kamu lahir, berarti dunia dikasih alasan buat senyum juga, kayak aku sekarang.<br><br>
+      Aku nggak bisa kasih kado mahal. Tapi kalau kamu minta perhatian, aku punya cadangan. Kalau kamu minta kejujuran, aku udah siapin dari lama. Kalau kamu cuma pengen ditemani, aku udah standby dari dulu. Nggak cuma hari ini, tapi selama kamu masih mau.<br><br>
+      Lia, kamu itu kayak paragraf paling romantis di novel Dilan. Bikin jatuh hati tapi tetap absurd. Kalau kamu jadi puisi, pasti judulnya: "Yang Manis Tapi Nggak Ngebosenin".<br><br>
+      Jadi, jangan tumbuh jadi orang dewasa yang kaku. Tetap jadi Lia yang lucu, nyebelin, tapi bikin kangen kayak WiFi tetangga yang kadang ilang, tapi kita tungguin juga.<br><br>
+      Selamat ulang tahun, Lia.<br>
+      Dari seseorang yang ngetik ini sambil senyum, dan sedikit deg-degan kayak Dilan waktu ngajak Milea boncengan: DIFFA 2025.
     </div>
+  </div>  <audio id="bgm" autoplay loop>
+    <source src="https://drive.google.com/uc?export=download&id=1A4yQwjETeZp9u4KcSUwAivmyL9zWASFJ" type="audio/mp3">
+  </audio>  <script>
+    const typingText = document.getElementById('typing');
+    const intro = document.getElementById('intro');
+    const message = document.getElementById('message');
+    const audio = document.getElementById('bgm');
 
-    <div class="music-control" id="musicControl">
-        <i>♪</i>
-    </div>
-
-    <audio id="birthdaySong" src="https://drive.google.com/uc?export=download&id=1A4yQwjETeZp9u4KcSUwAivmyL9zWASFJ" loop autoplay></audio>
-
-    <script>
-        const musicControl = document.getElementById('musicControl');
-        const birthdaySong = document.getElementById('birthdaySong');
-        const birthdayText = document.getElementById('birthdayText');
-        const message = document.getElementById('message');
-        const signature = document.getElementById('signature');
-
-        let isPlaying = true;
-
-        // Play music automatically
-        birthdaySong.play();
-
-        // Animation for birthday text
-        setTimeout(() => {
-            birthdayText.style.opacity = 0; // Hide birthday text
-            message.style.opacity = 1; // Show message
-            signature.style.opacity = 1; // Show signature
-        }, 3000); // 3 seconds delay before showing the message
-
-        musicControl.addEventListener('click', () => {
-            if (isPlaying) {
-                birthdaySong.pause();
-                musicControl.innerHTML = '<i>♫</i>';
-            } else {
-                birthdaySong.play();
-                musicControl.innerHTML = '<i>♪</i>';
-            }
-            isPlaying = !isPlaying;
-        });
-    </script>
-</body>
+    // Ketikan selesai setelah 4 detik
+    setTimeout(() => {
+      intro.classList.add('hidden');
+      message.classList.remove('hidden');
+      audio.play();
+    }, 5000);
+  </script></body>
 </html>
