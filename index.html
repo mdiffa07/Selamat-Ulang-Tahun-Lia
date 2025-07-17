@@ -1,46 +1,3 @@
-🔄 **HTML Edit Mode** - Processing your edit request...
-
- The main changes are:
-
-1. Fix the background image CSS syntax error:
-
-
-```diff
-<<<<<<< SEARCH
-            background-size: cover;
-=======
-            background-image: url('https://i.pinimg.com/originals/7b/4e/bb/7b4ebb5d7e898b628525b8123b3a00fd.jpg');
-            background-size: cover;
->>>>>>> REPLACE
-```
-
-```
-
-2. Update the music URL to the YouTube song:
-
-
-```diff
-<<<<<<< SEARCH
-            birthdaySong: new Howl({
-                src: ['https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'],
-=======
-            birthdaySong: new Howl({
-                src: ['https://www.youtube.com/watch?v=apCmyO5-cC0'],
->>>>>>> REPLACE
-```
-
-
-
-Important note: While this will replace the song URL, YouTube doesn't allow direct embedding/streaming like this due to security restrictions. For GitHub pages, you'll need to:
-
-1. Either upload the MP3 file to your GitHub repo and use a direct link to it
-2. Or use a service that converts YouTube to embeddable audio
-
-Would you like me to show you how to either:
-a) Host the audio file directly in your GitHub repo, or 
-b) Embed using the proper YouTube iframe method?Here is the updated HTML content after applying above edits:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,12 +60,6 @@ b) Embed using the proper YouTube iframe method?Here is the updated HTML content
         .main-content {
             background-image: url('https://i.pinimg.com/originals/7b/4e/bb/7b4ebb5d7e898b628525b8123b3a00fd.jpg');
             background-size: cover;
-=======
-            background-image: url('https://i.pinimg.com/originals/7b/4e/bb/7b4ebb5d7e898b628525b8123b3a00fd.jpg');
-            background-size: cover;
-=======
-            background-size: cover;
-            background-position: center;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -286,5 +237,3 @@ b) Embed using the proper YouTube iframe method?Here is the updated HTML content
     </script>
 </body>
 </html>
-
-```
