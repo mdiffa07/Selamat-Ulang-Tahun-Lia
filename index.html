@@ -73,12 +73,7 @@
 
     .btn-container {
       text-align: center;
-      margin: 20px;
-      position: fixed;
-      top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 9999;
+      margin-top: 20px;
     }
 
     #btn_music {
@@ -94,10 +89,6 @@
   </style>
 </head>
 <body>
-  <div class="btn-container">
-    <button id="btn_music" onclick="toggleMusic()">Play</button>
-  </div>
-
   <div class="fullscreen" id="intro">
     <div class="typing-text" id="typing">Afrylia Birthday</div>
   </div>
@@ -120,26 +111,26 @@
         Selamat ulang tahun, Lia.<br>
         Dari seseorang yang ngetik ini sambil senyum, dan sedikit deg-degan kayak Dilan waktu ngajak Milea boncengan: DIFFA 2025.
       </div>
+      <div class="btn-container">
+        <button id="btn_music" onclick="toggleMusic()">Play/Pause</button>
+      </div>
     </div>
   </div>
 
-  <audio id="bgMusic" src="https://raw.githubusercontent.com/mdiffa07/Lagu-Lia-dari-Dilan/main/Vocaroo-1V5XwumqHYSl.mp3" loop></audio>
+  <audio id="bgMusic" src="https://raw.githubusercontent.com/mdiffa07/Lagu-Lia-dari-Dilan/main/Vocaroo%201V5XwumqHYSl.mp3" loop></audio>
 
   <script>
     let audioPlaying = false;
 
     function toggleMusic() {
       const audio = document.getElementById("bgMusic");
-      const btn = document.getElementById("btn_music");
 
       if (!audioPlaying) {
         audio.play();
         audioPlaying = true;
-        btn.innerText = "Pause";
       } else {
         audio.pause();
         audioPlaying = false;
-        btn.innerText = "Play";
       }
     }
 
