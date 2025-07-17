@@ -81,9 +81,7 @@
 }
 
 audio {
-  display: block;
-  position: absolute;
-  top: -9999px;
+  display: none;
 }
 
   </style>
@@ -108,26 +106,26 @@ audio {
     Dari seseorang yang ngetik ini sambil senyum, dan sedikit deg-degan kayak Dilan waktu ngajak Milea boncengan: DIFFA 2025.
   </div>
   <div class="btn-container">
-    <button id="btn_music" onclick="toggleMusic()">▶️ Putar Lagu Romantis dari Diffa</button>
+    <button id="btn_music" onclick="toggleMusic()">Play / Pause</button>
   </div>
 </div>
 
-  </div><audio id="bgMusic" src="https://mdiffa07.github.io/Lagu-Lia/Vocaroo.mp3" loop></audio>
+  </div><audio id="bgMusic" src="https://mdiffa07.github.io/Lagu-Lia/Vocaroo.mp3" autoplay loop></audio>
 
   <script>
     const audio = document.getElementById("bgMusic");
     const btn = document.getElementById("btn_music");
-    let isPlaying = false;
+    let isPlaying = true;
 
     function toggleMusic() {
       if (audio.paused) {
         audio.play();
         isPlaying = true;
-        btn.innerText = "⏸️ Udah diem Lia jangan pencet lagi aku pusing";
+        btn.innerText = "⏸️ Pause";
       } else {
         audio.pause();
         isPlaying = false;
-        btn.innerText = "▶️ Putar Lagu Romantis dari Diffa";
+        btn.innerText = "▶️ Play";
       }
     }
 
