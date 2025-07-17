@@ -87,14 +87,16 @@
 }
 
 audio {
-  display: none;
+  display: block;
+  position: absolute;
+  top: -9999px;
 }
 
   </style>
 </head>
 <body>
   <div class="top-bar">
-    <button id="btn_music">▶️ Putar Lagu Romantis dari Diffa</button>
+    <button id="btn_music" onclick="toggleMusic()">▶️ Putar Lagu Romantis dari Diffa</button>
   </div>  <div class="fullscreen" id="intro">
     <div class="typing-text" id="typing">Afrylia Birthday</div>
   </div>  <div class="hidden" id="message">
@@ -115,26 +117,24 @@ audio {
   </div>
 </div>
 
-  </div>  <audio id="bgMusic" preload="auto" loop>
-    <source src="https://mdiffa07.github.io/Lagu-Lia/Vocaroo.mp3" type="audio/mpeg">
-    Browser kamu tidak mendukung audio HTML5
-  </audio>  <script>
+  </div><audio id="bgMusic" src="https://mdiffa07.github.io/Lagu-Lia/Vocaroo.mp3" autoplay loop></audio>
+
+  <script>
     const audio = document.getElementById("bgMusic");
     const btn = document.getElementById("btn_music");
+    let isPlaying = false;
 
-    btn.addEventListener('click', () => {
+    function toggleMusic() {
       if (audio.paused) {
-        audio.play().then(() => {
-          btn.innerText = "⏸️ Udah diem Lia jangan pencet lagi aku pusing";
-        }).catch((e) => {
-          console.log("Autoplay gagal:", e);
-          alert("Maaf Lia, browser kamu belum bisa play otomatis. Coba klik tombolnya dua kali ya~");
-        });
+        audio.play();
+        isPlaying = true;
+        btn.innerText = "⏸️ Udah diem Lia jangan pencet lagi aku pusing";
       } else {
         audio.pause();
+        isPlaying = false;
         btn.innerText = "▶️ Putar Lagu Romantis dari Diffa";
       }
-    });
+    }
 
     const intro = document.getElementById('intro');
     const message = document.getElementById('message');
