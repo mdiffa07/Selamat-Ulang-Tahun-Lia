@@ -70,7 +70,6 @@ audio {
 
 .btn-container {
   text-align: center;
-  margin: 20px;
   position: fixed;
   top: 10px;
   left: 50%;
@@ -93,7 +92,7 @@ audio {
 </head>
 <body>
   <div class="btn-container">
-    <button id="btn_music" onclick="toggleMusic()">Play</button>
+    <button id="btn_music" onclick="toggleMusic()">▶️ Putar Lagu Romantis dari Diffa</button>
   </div>  <div class="fullscreen" id="intro">
     <div class="typing-text" id="typing">Afrylia Birthday</div>
   </div>  <div class="hidden" id="message">
@@ -126,11 +125,11 @@ audio {
       if (!audioPlaying) {
         audio.play();
         audioPlaying = true;
-        btn.innerText = "Pause";
+        btn.innerText = "⏸️ Berhentiin Dulu, Lia Pusing";
       } else {
         audio.pause();
         audioPlaying = false;
-        btn.innerText = "Play";
+        btn.innerText = "▶️ Putar Lagu Romantis dari Diffa";
       }
     }
 
