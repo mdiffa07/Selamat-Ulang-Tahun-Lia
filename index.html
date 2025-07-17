@@ -11,6 +11,29 @@
   font-family: Arial, sans-serif;
 }
 
+.top-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #fff6f0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  border-bottom: 1px solid #b85c38;
+}
+
+#btn_music {
+  background-color: #b85c38;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+}
+
 .fullscreen {
   height: 100vh;
   display: flex;
@@ -68,30 +91,10 @@ audio {
   display: none;
 }
 
-.btn-container {
-  text-align: center;
-  position: fixed;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-}
-
-#btn_music {
-  background-color: #b85c38;
-  color: white;
-  font-size: 16px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-family: 'Arial', sans-serif;
-}
-
   </style>
 </head>
 <body>
-  <div class="btn-container">
+  <div class="top-bar">
     <button id="btn_music" onclick="toggleMusic()">▶️ Putar Lagu Romantis dari Diffa</button>
   </div>  <div class="fullscreen" id="intro">
     <div class="typing-text" id="typing">Afrylia Birthday</div>
